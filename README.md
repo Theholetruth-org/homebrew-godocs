@@ -6,12 +6,8 @@ Homebrew tap for [godocs](https://github.com/Theholetruth-org/Hole-GoDocs) — t
 
 ```bash
 brew tap theholetruth-org/godocs
+brew trust theholetruth-org/godocs   # required once (third-party tap)
 brew install godocs
-```
-
-Then verify:
-
-```bash
 godocs --version
 ```
 

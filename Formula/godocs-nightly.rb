@@ -1,7 +1,7 @@
 class GodocsNightly < Formula
   desc "Evidence-ETL CLI (nightly build from main) -- split, Bates-stamp, and RAG-chunk PDF disclosure bundles"
   homepage "https://github.com/Theholetruth-org/Hole-GoDocs"
-  version "2026.06.24"
+  version "2026.06.25"
   license :cannot_represent
 
   conflicts_with "godocs", because: "both install the same godocs binary"
@@ -9,10 +9,10 @@ class GodocsNightly < Formula
   on_macos do
     if Hardware::CPU.arm?
       url "https://github.com/Theholetruth-org/Hole-GoDocs/releases/download/nightly/godocs-nightly-macos-arm64.tar.gz"
-      sha256 "37f44b5327e29e4debc52dbbe4802ec01cdf08cf2dd9abdbe07b95a9d10742ee"
+      sha256 "7fd2c89fe6c5c045fd39b715273d2e4d6cd4f4d15bb392e59696045761a1eaf7"
     else
       url "https://github.com/Theholetruth-org/Hole-GoDocs/releases/download/nightly/godocs-nightly-macos-amd64.tar.gz"
-      sha256 "c55e02d7074548944f7ddcf130180293af8c3d85958b26e42dca5845ec6e1f14"
+      sha256 "79ed875408482a8603670af029cf12935bec339745bf4bddf40a7c0368ad0c60"
     end
   end
 

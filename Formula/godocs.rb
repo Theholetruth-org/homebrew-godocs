@@ -4,6 +4,9 @@ class Godocs < Formula
   version "1.3.1"
   license :cannot_represent
 
+  depends_on "mupdf-tools"
+  depends_on "qpdf"
+
   conflicts_with "godocs-nightly", because: "both install the same godocs binary"
 
   on_macos do

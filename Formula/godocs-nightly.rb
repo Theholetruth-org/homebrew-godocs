@@ -4,6 +4,9 @@ class GodocsNightly < Formula
   version "2026.07.28"
   license :cannot_represent
 
+  depends_on "mupdf-tools"
+  depends_on "qpdf"
+
   conflicts_with "godocs", because: "both install the same godocs binary"
 
   on_macos do

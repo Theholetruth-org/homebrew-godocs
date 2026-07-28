@@ -12,26 +12,29 @@ class GodocsNightly < Formula
   on_macos do
     if Hardware::CPU.arm?
       url "https://github.com/Theholetruth-org/Hole-GoDocs/releases/download/nightly/godocs-nightly-macos-arm64.tar.gz"
-      sha256 "87955bde4547411a69f29d0414610889e1e3cda1ee0f633f2725e2fff3c799db"
+      sha256 "4517253ea7eb188c5b280285525e610dd022248174431b72f7aa980844227fea"
     else
       url "https://github.com/Theholetruth-org/Hole-GoDocs/releases/download/nightly/godocs-nightly-macos-amd64.tar.gz"
-      sha256 "72cab202698fe08c597a92fa85f3fb158f9d1e9f6f17125c66553c28bd151f7e"
+      sha256 "381f0dad56f1e28453439282633c4471d03ca22773b397c52e32231e84ea3969"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
       url "https://github.com/Theholetruth-org/Hole-GoDocs/releases/download/nightly/godocs-nightly-linux-arm64.tar.gz"
-      sha256 "b1e2d9e20a41a7abd135acd0b2f0857ef73c4b9ac525450a33e8b09b4617e4a1"
+      sha256 "42c444b177ba6a554acc4c35be67e556983035b3f5582d2bf6173aed107a2f1d"
     else
       url "https://github.com/Theholetruth-org/Hole-GoDocs/releases/download/nightly/godocs-nightly-linux-amd64.tar.gz"
-      sha256 "17cc0705a2decd9eb9e933080fdb4c7ff17d9e78042dfbdcb5caaeab9c8824e9"
+      sha256 "c59cfd76447fc4a55b960c21b1f33846239638223dfb0136d5dadc404fac99d5"
     end
   end
 
   def install
     bin.install "godocs"
     bin.install "godocs-pdf-merge"
+    bash_completion.install "completions/godocs.bash" => "godocs"
+    zsh_completion.install "completions/_godocs"
+    man1.install "man/godocs.1"
   end
 
   test do

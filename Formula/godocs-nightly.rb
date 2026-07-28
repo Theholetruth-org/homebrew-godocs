@@ -16,6 +16,16 @@ class GodocsNightly < Formula
     end
   end
 
+  on_linux do
+    if Hardware::CPU.arm?
+      url "https://github.com/Theholetruth-org/Hole-GoDocs/releases/download/nightly/godocs-nightly-linux-arm64.tar.gz"
+      sha256 "b1e2d9e20a41a7abd135acd0b2f0857ef73c4b9ac525450a33e8b09b4617e4a1"
+    else
+      url "https://github.com/Theholetruth-org/Hole-GoDocs/releases/download/nightly/godocs-nightly-linux-amd64.tar.gz"
+      sha256 "17cc0705a2decd9eb9e933080fdb4c7ff17d9e78042dfbdcb5caaeab9c8824e9"
+    end
+  end
+
   def install
     bin.install "godocs"
     bin.install "godocs-pdf-merge"

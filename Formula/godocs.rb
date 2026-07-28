@@ -16,6 +16,16 @@ class Godocs < Formula
     end
   end
 
+  on_linux do
+    if Hardware::CPU.arm?
+      url "https://github.com/Theholetruth-org/Hole-GoDocs/releases/download/v1.3.1/godocs-v1.3.1-linux-arm64.tar.gz"
+      sha256 "9f51474261b99a5782852a20a5f16dc39f33e09f4fab9280000e4fdbe0212597"
+    else
+      url "https://github.com/Theholetruth-org/Hole-GoDocs/releases/download/v1.3.1/godocs-v1.3.1-linux-amd64.tar.gz"
+      sha256 "d50218047e46add43d0565695f1e10cb62e19e52b6df4f51f7a6109abb9c6751"
+    end
+  end
+
   def install
     bin.install "godocs"
     bin.install "godocs-pdf-merge"

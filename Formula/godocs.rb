@@ -1,7 +1,7 @@
 class Godocs < Formula
   desc "Evidence-ETL CLI -- split, Bates-stamp, and RAG-chunk PDF disclosure bundles"
   homepage "https://github.com/Theholetruth-org/Hole-GoDocs"
-  version "1.3.1"
+  version "1.4.0"
   license :cannot_represent
 
   depends_on "mupdf-tools"
@@ -11,27 +11,30 @@ class Godocs < Formula
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/Theholetruth-org/Hole-GoDocs/releases/download/v1.3.1/godocs-v1.3.1-macos-arm64.tar.gz"
-      sha256 "270b2952c0f73fd6240c5a9d7063e05da3e1cb50b21a223b3d748f3bdb73de2a"
+      url "https://github.com/Theholetruth-org/Hole-GoDocs/releases/download/v1.4.0/godocs-v1.4.0-macos-arm64.tar.gz"
+      sha256 "a839efed10a4a520b9982e3c8eb6a770074d89ea188893e58d4d3370119b9730"
     else
-      url "https://github.com/Theholetruth-org/Hole-GoDocs/releases/download/v1.3.1/godocs-v1.3.1-macos-amd64.tar.gz"
-      sha256 "7cf7f6227f3269bda558461f654fbe2bd6280ad38850431610a1e9c0d08a5f0f"
+      url "https://github.com/Theholetruth-org/Hole-GoDocs/releases/download/v1.4.0/godocs-v1.4.0-macos-amd64.tar.gz"
+      sha256 "afdf1e45dc8fdc106fc484aad8f747f8e75425320636b802a13d86360d1e6205"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
-      url "https://github.com/Theholetruth-org/Hole-GoDocs/releases/download/v1.3.1/godocs-v1.3.1-linux-arm64.tar.gz"
-      sha256 "9f51474261b99a5782852a20a5f16dc39f33e09f4fab9280000e4fdbe0212597"
+      url "https://github.com/Theholetruth-org/Hole-GoDocs/releases/download/v1.4.0/godocs-v1.4.0-linux-arm64.tar.gz"
+      sha256 "25e25d3d16b6ecca48408544cc7253a3e62f740535e89602a222846d5fac1a28"
     else
-      url "https://github.com/Theholetruth-org/Hole-GoDocs/releases/download/v1.3.1/godocs-v1.3.1-linux-amd64.tar.gz"
-      sha256 "d50218047e46add43d0565695f1e10cb62e19e52b6df4f51f7a6109abb9c6751"
+      url "https://github.com/Theholetruth-org/Hole-GoDocs/releases/download/v1.4.0/godocs-v1.4.0-linux-amd64.tar.gz"
+      sha256 "74e0021080eeededcb92755eb09950303cc3942378b7a5c1b89776c2a1600e34"
     end
   end
 
   def install
     bin.install "godocs"
     bin.install "godocs-pdf-merge"
+    bash_completion.install "completions/godocs.bash" => "godocs"
+    zsh_completion.install "completions/_godocs"
+    man1.install "man/godocs.1"
   end
 
   test do

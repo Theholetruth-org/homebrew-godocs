@@ -1,7 +1,7 @@
 class HoledocsNightly < Formula
   desc "Evidence-ETL CLI (nightly build from main) -- split, Bates-stamp, and RAG-chunk PDF disclosure bundles"
   homepage "https://github.com/Theholetruth-org/Hole-GoDocs"
-  version "2026.09.01"
+  version "2026.09.02"
   license :cannot_represent
 
   depends_on "mupdf-tools"
@@ -12,20 +12,20 @@ class HoledocsNightly < Formula
   on_macos do
     if Hardware::CPU.arm?
       url "https://github.com/Theholetruth-org/Hole-GoDocs/releases/download/nightly/godocs-nightly-macos-arm64.tar.gz"
-      sha256 "e45b6dc5375c2775ec20d254d3b3fe3c54d308980d45bde317648eba9fb9603e"
+      sha256 "cd0f3e17e4c88c87c0ba31bdc4edf275a688216226a23fb1ac58401ec2f21755"
     else
       url "https://github.com/Theholetruth-org/Hole-GoDocs/releases/download/nightly/godocs-nightly-macos-amd64.tar.gz"
-      sha256 "055782ff89841512aa04d9577ee1bcc6ed400b9ccfc2a9442f56d5cae6cac4ee"
+      sha256 "2dc6084472d0f855ce6fc4d3261142426b2f78de447737520147ad10a871ae47"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
       url "https://github.com/Theholetruth-org/Hole-GoDocs/releases/download/nightly/godocs-nightly-linux-arm64.tar.gz"
-      sha256 "caf95c5121df20c216e22cdc8e02a96c73169cb62de4dcfd211e14964c475bfb"
+      sha256 "9ce349080dadb5a5a50efc7f49fb16ee91a61a3477a0c5719a41bb7d8301ace3"
     else
       url "https://github.com/Theholetruth-org/Hole-GoDocs/releases/download/nightly/godocs-nightly-linux-amd64.tar.gz"
-      sha256 "cd62df9e4844d12f98cb5c9cb0e96021c31f523a0cd9d73aae7429fc98cef87c"
+      sha256 "ba1ee401c847151e31bfd20fb331e9609aba8e4bca7b78dc45b6f8c6e882c3a5"
     end
   end
 
